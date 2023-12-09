@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/githubAuthFragment">
+
+    <fragment
+        android:id="@+id/githubAuthFragment"
+        android:name="com.example.androidgithubclient.view.fragments.auth.GithubAuthFragment"
+        android:label="fragment_github_auth"
+        tools:layout="@layout/fragment_github_auth" >
+        <action
+            android:id="@+id/action_githubAuthFragment_to_githubListRepositoriesFragment"
+            app:destination="@id/githubListRepositoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/githubListRepositoriesFragment"
+        android:name="com.example.androidgithubclient.view.fragments.reposes.GithubListRepositoriesFragment"
+        android:label="fragment_github_list_repositories"
+        tools:layout="@layout/fragment_github_list_repositories" >
+        <action
+            android:id="@+id/action_githubListRepositoriesFragment_to_githubSingleRepositoryFragment"
+            app:destination="@id/githubSingleRepositoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/githubSingleRepositoryFragment"
+        android:name="com.example.androidgithubclient.view.fragments.repos.GithubSingleRepositoryFragment"
+        android:label="fragment_github_single_repository"
+        tools:layout="@layout/fragment_github_single_repository" >
+        <action
+            android:id="@+id/action_githubSingleRepositoryFragment_to_githubListRepositoriesFragment"
+            app:destination="@id/githubListRepositoriesFragment" />
+    </fragment>
+</navigation>

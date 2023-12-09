@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.repos.GithubSingleRepositoryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/txRepName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txRepDescr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txRepDescr"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/imRepAvatar"
+            app:layout_constraintEnd_toEndOf="@+id/txRepName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/txRepName"
+            app:layout_constraintTop_toBottomOf="@+id/txRepName" />
+
+        <ImageView
+            android:id="@+id/imRepAvatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/rc_commit"
+            app:layout_constraintStart_toStartOf="@+id/txRepDescr"
+            app:layout_constraintTop_toBottomOf="@+id/txRepDescr"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txRepAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/imRepAvatar"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imRepAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imRepAvatar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_commit"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_fork"
+            app:layout_constraintBottom_toBottomOf="@+id/txRepForks"
+            app:layout_constraintEnd_toStartOf="@+id/txRepForks"
+            app:layout_constraintTop_toTopOf="@+id/txRepForks" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_watch"
+            app:layout_constraintBottom_toBottomOf="@+id/txRepWatches"
+            app:layout_constraintEnd_toStartOf="@+id/txRepWatches"
+            app:layout_constraintTop_toTopOf="@+id/txRepWatches" />
+
+        <TextView
+            android:id="@+id/txRepForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/txRepDescr"
+            app:layout_constraintTop_toTopOf="@+id/imRepAvatar" />
+
+        <TextView
+            android:id="@+id/txRepWatches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imRepAvatar"
+            app:layout_constraintEnd_toEndOf="@+id/txRepForks" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
